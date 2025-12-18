@@ -1,25 +1,25 @@
-export const allFooods = [
-    { foodNmae: 'Pizza',
+export const allFoods = [
+    { foodName: 'Pizza',
       discription:'pepperoni,mushrom,mozarella cheese',
-      pic:'./images/pizza.jpg',
+      pic:'🍕',
       price: '14.99'
     },    
-    {foodNmae: 'Burger',
+    {foodName: 'Burger',
         discription:'beef patty,lettuce,tomato,cheese',
-        pic:'./images/burger.jpg',
+        pic:'🍔',
         price: '12.99'
     },
-    {foodNmae: 'Beer',
+    {foodName: 'Beer',
         discription:'grain, hops, yeast, water',
-        pic:'./images/beer.jpg',
+        pic:'🍺',
         price: '6.99'},
-        {foodNmae: 'Sushi',
+        {foodName: 'Sushi',
         discription:'rice,seaweed,fish,vegetables',
-        pic:'./images/sushi.jpg',
+        pic:'🍣',
         price: '19.99'
     },
-    {foodNmae: 'Pasta',
+    {foodName: 'Pasta',
         discription:'noodles,tomato sauce,parmesan cheese',
-        pic:'./images/pasta.jpg',
+        pic:'🍝',
         price: '13.99'}
 ]

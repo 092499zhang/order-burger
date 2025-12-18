@@ -2,6 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  font-family: "Smythe", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+    font-size: 39px;
+}
+h2 {
+    font-size: 28px;    
+}
+h3 {
+    font-size: 28px;    
+}
+p {
+    font-size: 23px;
 }
 
 header {
@@ -17,4 +32,91 @@ header {
     text-align: left;
     padding: 60px 0 60px 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+/* Container holds MANY menu rows (stacked vertically) */
+#foodContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* spacing between each food row */
+  padding: 46px;
+}
+
+/* Each food row: left info + right button */
+.food-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 51px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgba(60, 60, 60, 0.12);
+}
+
+/* Left group: icon + text */
+.food-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.food-pic {
+  font-size: 79px;
+  line-height: 1;
+}
+
+.food-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.food-price {
+    font-size: 20px;
+}
+
+.food-description {
+  opacity: 0.8;
+    font-size: 16px;
+    color: #6f6f6f;
+}
+
+.add-to-order-btn, .deuct-to-order-btn {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  cursor: pointer;
+  font-size: 27px;
+  margin-right: 5px;
+}
+
+/* this is the order details section */
+#orderDetails {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+}
+
+#order-btn {
+  background-color: #5ed491;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;                  
+  width: 508px;
+  height: 60px;
+  margin-top: 53px;
 }
