@@ -81,7 +81,7 @@ header {
     color: #6f6f6f;
 }
 
-.add-to-order-btn, .deuct-to-order-btn {
+.add-to-order-btn, .deduct-to-order-btn {
   flex: 0 0 auto;
   width: 40px;
   height: 40px;
@@ -91,6 +91,15 @@ header {
   cursor: pointer;
   font-size: 27px;
   margin-right: 5px;
+}
+
+.food-quantity {
+  font-size: 20px;
+  margin: 0 10px;
+  min-width: 20px;
+  text-align: center;
+  border: 1px solid #6f6f6f;
+  border-radius: 5px;
 }
 
 /* this is the order details section */
