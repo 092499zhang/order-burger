@@ -39,6 +39,7 @@ header {
   flex-direction: column;
   gap: 12px; /* spacing between each food row */
   padding: 46px;
+  padding-bottom: 140px;
 }
 
 /* Each food row: left info + right button */

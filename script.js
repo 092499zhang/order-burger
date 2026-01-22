@@ -2,6 +2,13 @@ import { allFoods } from "./data-food.js"
 console.log(allFoods);
 
 const foodContainer = document.getElementById('foodContainer');
+const orderCounts = {};
+const orderDetails = document.getElementById('orderDetails');
+
+const updateOrderDetailsVisibility = () => {
+  const hasOrder = Object.values(orderCounts).some((count) => count > 0);
+  orderDetails.style.opacity = hasOrder ? 1 : 0;
+};
 
 const renderFoodItems = () => {
 const foodItemsHTML = allFoods.map((food) => {
@@ -32,8 +39,33 @@ foodContainer.innerHTML = foodItemsHTML;
 };
 
 renderFoodItems();  
+updateOrderDetailsVisibility();
 
-foodContainer.addEventListener('click', (e) => {
- if(e.target.dataset.foodName && e.target.classList.contains('add-to-order-btn')) {
-console.log(e.target.dataset.foodQuantity);
-}}); 
+ foodContainer.addEventListener('click', (e) => {
+  
+if (e.target.classList.contains('add-to-order-btn')) {
+  const foodName = e.target.dataset.foodName;
+
+  orderCounts[foodName] = (orderCounts[foodName] || 0) + 1;
+
+  const quantityEl = document.querySelector(
+  `[data-food-quantity="${foodName}"]`
+);
+quantityEl.textContent = orderCounts[foodName];
+  updateOrderDetailsVisibility();
+}
+
+if (e.target.classList.contains('deduct-to-order-btn')) {
+  const foodName = e.target.dataset.foodName;
+
+  orderCounts[foodName] = Math.max((orderCounts[foodName] || 0) - 1, 0);
+
+  const quantityEl = document.querySelector(
+    `[data-food-quantity="${foodName}"]`
+  );
+
+  quantityEl.textContent = orderCounts[foodName];
+  updateOrderDetailsVisibility();
+}
+
+}); 
