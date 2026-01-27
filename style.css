@@ -116,6 +116,8 @@ header {
   flex-direction: column;
   align-items: center;
   opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
 }
 
 #order-btn {
@@ -129,4 +131,65 @@ header {
   width: 508px;
   height: 60px;
   margin-top: 53px;
+}
+
+/* Order summary list (inside #orderDetails) */
+#orderContainer {
+  width: 100%;
+  max-width: 508px; /* match the order button width */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.order-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.order-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.order-qty {
+  flex: 0 0 auto;
+  width: 56px;
+  text-align: right;
+}
+
+.order-price {
+  flex: 0 0 auto;
+  width: 96px;
+  text-align: right;
+}
+
+/* When visible (opacity 1), allow clicking inside the panel */
+#orderDetails[style*="opacity: 1"] {
+  pointer-events: auto;
+}
+
+.order-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 8px 0;
+}
+
+.order-total-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.order-total-label {
+  font-weight: 700;
+}
+
+.order-total-price {
+  font-weight: 700;
 }
